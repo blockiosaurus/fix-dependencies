@@ -1,14 +1,16 @@
 'use client';
 import React, { useEffect, useState } from 'react'
-import Phaser from 'phaser';
+import * as Phaser from 'phaser';
 import { Boot } from '@/scenes/Boot';
 import { Preloader } from '@/scenes/Preloader';
 import { WalletConnect } from '@/scenes/WalletConnect';
 import { MainMenu } from '@/scenes/MainMenu';
 import { Game as MainGame } from '@/scenes/Game';
+import { BlockStacker } from '@/scenes/BlockStacker';
 import { useUmi } from '@/providers/useUmi';
 import EventCenter from '@/events/eventCenter';
 import { useWallet } from '@solana/wallet-adapter-react';
+import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
 
 export const DEFAULT_WIDTH: number = 800;
 export const DEFAULT_HEIGHT: number = 600;
@@ -39,9 +41,10 @@ const Game = () => {
                 WalletConnect,
                 MainMenu,
                 MainGame,
+                BlockStacker,
             ],
             render: {
-                pixelArt: true,
+                pixelArt: false,
             },
             scale: {
                 mode: Phaser.Scale.FIT,
@@ -49,13 +52,21 @@ const Game = () => {
             },
             pixelArt: true,
             physics: {
-                default: 'arcade',
-                arcade: {
-                    gravity: { x: 0, y: 800 },
-                    debug: false
+                default: 'matter',
+                matter: {
+                    gravity: { x: 0, y: 2 },
+                    debug: true
                 }
             },
-
+            plugins: {
+                scene: [
+                    {
+                        plugin: PhaserMatterCollisionPlugin,
+                        key: 'matterCollision',
+                        mapping: 'matterCollision'
+                    }
+                ]
+            }
         };
         const game = new Phaser.Game(config)
         return () => {

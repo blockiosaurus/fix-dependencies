@@ -20,7 +20,7 @@ export default function Home() {
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
   const adapter = useMemo(() => new TipLinkWalletAdapter({
-    title: "Solana Phaser Template",
+    title: "Cargo Update",
     clientId: "694bf97c-d2ac-4dfc-a786-a001812658df",
     theme: 'dark'
   }), []);
@@ -29,7 +29,11 @@ export default function Home() {
     <main>
       < ConnectionProvider endpoint={endpoint} >
         <WalletProvider wallets={[adapter]} autoConnect>
-          <TipLinkWalletModalProvider title="Hello Phaser" logoSrc="/assets/logo.png" theme={TipLinkModalTheme.DARK}>
+          <TipLinkWalletModalProvider
+            title="Cargo Update"
+            logoSrc="/assets/logo.png"
+            theme={TipLinkModalTheme.DARK}
+          >
             <UmiProvider>
               <div className="p-5 w-full">
                 <WalletMultiButton className="ml-auto" />

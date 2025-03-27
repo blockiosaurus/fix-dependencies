@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   '@metaplex-foundation/digital-asset-standard-api':
     specifier: ^1.0.4
@@ -53,6 +49,9 @@ dependencies:
   phaser:
     specifier: ^3.87.0
     version: 3.87.0
+  phaser-matter-collision-plugin:
+    specifier: ^1.0.0
+    version: 1.0.0(phaser@3.87.0)
   react:
     specifier: ^18.3.1
     version: 18.3.1
@@ -9476,6 +9475,14 @@ packages:
       sha.js: 2.4.11
     dev: false
 
+  /phaser-matter-collision-plugin@1.0.0(phaser@3.87.0):
+    resolution: {integrity: sha512-8ihbK5tPmMzpLSbJkrnyPKNZT/TyhN2bjHtthTl2cmTCiJpY6Ih7SZf1Kb6zWtUD8kWlllPrBktF1CcwmMvc0w==}
+    peerDependencies:
+      phaser: ^3.55.2
+    dependencies:
+      phaser: 3.87.0
+    dev: false
+
   /phaser@3.87.0:
     resolution: {integrity: sha512-AyI1b3T5fp05gzf6WUmu2FNqaZL+Y7w88yBRLf7YZXF9bncUSHpnDrupnTGoPqy/RKHRLBcay7zWeqQ2wiMWcw==}
     dependencies:
@@ -10925,6 +10932,7 @@ packages:
 
   /sudo-prompt@9.2.1:
     resolution: {integrity: sha512-Mu7R0g4ig9TUuGSxJavny5Rv0egCEtpZRNMrZaYS1vxkiIxGiGUwoezU3LazIQ+KE04hTrTfNPgxU5gzi7F5Pw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     dev: false
 
   /superstruct@1.0.4:
@@ -11819,3 +11827,7 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
